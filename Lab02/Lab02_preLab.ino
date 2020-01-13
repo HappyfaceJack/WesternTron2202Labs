@@ -1,7 +1,12 @@
+/**
+The purpose of the code is to have a blinking LED with specific sequence seen in the provided manual.
+*/
+
 unsigned long past = 0;
 const long delayMs = 100;
-int pin[4] = {4, 5, 6, 7};
+int pin[4] = {4, 5, 6, 7}; //The pin numbers maybe changed to suitable numbers according to the wiring
 int a = 1, state;
+
 void setup() {
   for (int i = 0; i < 4; i++) {
     pinMode(pin[i], OUTPUT);
@@ -26,13 +31,8 @@ void loop() {
     wait();
   }
 }
-void writeAll(int i, int j, int k, int l) {
-  digitalWrite(pin[0], i);
-  digitalWrite(pin[1], j);
-  digitalWrite(pin[2], k);
-  digitalWrite(pin[3], l);
-}
-void wait() {
+
+void wait() {//a substitute to the delay(), where it is a constraint in the lab
   while (millis() < past + delayMs) {
   }
   past = millis();
