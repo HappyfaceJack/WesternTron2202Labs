@@ -5,7 +5,6 @@ The purpose of the code is to have a blinking LED with specific sequence seen in
 unsigned long past = 0;
 const long delayMs = 100;
 int pin[4] = {4, 5, 6, 7}; //The pin numbers maybe changed to suitable numbers according to the wiring
-int a = 1, state;
 
 void setup() {
   for (int i = 0; i < 4; i++) {
