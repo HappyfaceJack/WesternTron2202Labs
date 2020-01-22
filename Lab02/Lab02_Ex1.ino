@@ -10,6 +10,12 @@ void setup() {
 }
 
 void loop() {
+ // delayMs =analogRead(A0);
+  if(state%2!=0){
+  delayMs=300;
+  } else {
+  delayMs=100;
+  }
   if (millis() - past >= delayMs) {
     past = millis();
     if (state == 16) {
@@ -17,52 +23,40 @@ void loop() {
     }
     switch (state) {
       case 1:
-        writeAll(0, 0, 0, 0);
+        writeAll(1, 0, 0, 0);
         break;
       case 2:
-        writeAll(1, 0, 0, 0);
+        writeAll(1, 1, 0, 0);
         break;
       case 3:
-        writeAll(1, 1, 0, 0);
+        writeAll(0, 1, 0, 0);
         break;
       case 4:
-        writeAll(1, 1, 1, 0);
+        writeAll(0, 1, 1, 0);
         break;
       case 5:
-        writeAll(1, 1, 1, 1);
+        writeAll(0, 0, 1, 0);
         break;
       case 6:
-        writeAll(0, 1, 1, 1);
+        writeAll(0, 0, 1, 1);
         break;
       case 7:
-        writeAll(0, 0, 1, 1);
+        writeAll(0, 0, 0, 1);
         break;
       case 8:
-        writeAll(0, 0, 0, 1);
-        break;
-      case 9:
-        writeAll(0, 0, 0, 0);
-        break;
-      case 10:
-        writeAll(0, 0, 0, 1);
-        break;
-      case 11:
         writeAll(0, 0, 1, 1);
         break;
+      case 9:
+        writeAll(0, 0, 1, 0);
+        break;
+      case 10:
+        writeAll(0, 1, 1, 0);
+        break;
+      case 11:
+        writeAll(0, 1, 0, 0);
+        break;
       case 12:
-        writeAll(0, 1, 1, 1);
-        break;
-      case 13:
-        writeAll(1, 1, 1, 1);
-        break;
-      case 14:
-        writeAll(1, 1, 1, 0);
-        break;
-      case 15:
         writeAll(1, 1, 0, 0);
-        break;
-      case 16:
-        writeAll(1, 0, 0, 0);
         break;
     }
     state++;
