@@ -1,10 +1,8 @@
 /*
-
   MSE 2202 MSEBot base code for Labs 3 and 4
   Language: Arduino
   Authors: Michael Naish and Eugen Porter
   Date: 16/01/17
-
   Rev 1 - Initial version
   Rev 2 - Update for MSEduino v. 2
   Rev 3 - FirtTurn
@@ -347,8 +345,8 @@ int midTracker=digitalRead(ci_Middle_Line_Tracker_LED);
                 ui_Right_Motor_Speed = 1800;
                 if ((ui_Left_Line_Tracker_Data < (ui_Left_Line_Tracker_Dark - ui_Line_Tracker_Tolerance)) ||  (ui_Middle_Line_Tracker_Data < (ui_Middle_Line_Tracker_Dark - ui_Line_Tracker_Tolerance))  ||  (ui_Right_Line_Tracker_Data < (ui_Right_Line_Tracker_Dark - ui_Line_Tracker_Tolerance)))//if all == LOW
                 {
-                  ui_Left_Motor_Speed=ci_Motorsto;
-                  ui_Right_Motor_Speed=ui_Motors_Speed;
+                  ui_Left_Motor_Speed=ci_Motor_Stop;
+                  ui_Right_Motor_Speed=ci_Motor_Stop;
                   turn++;
                 }
                 break;
