@@ -83,10 +83,10 @@ const int ci_Right_Motor_Offset_Address_L = 14;
 const int ci_Right_Motor_Offset_Address_H = 15;
 
 const int ci_Motor_Stop = 1500;        // 200 for brake mode; 1500 for stop
-const int ci_Grip_Motor_Open = 90;         // Experiment to determine appropriate value
+const int ci_Grip_Motor_Open = 50;         // Experiment to determine appropriate value
 const int ci_Grip_Motor_Closed = 0;        //  "
 const int ci_Arm_Servo_Retracted = 0;      //  "
-const int ci_Arm_Servo_Extended = 90;      //  "
+const int ci_Arm_Servo_Extended = 12;      //  "
 const int ci_Display_Time = 500;
 const int ci_Line_Tracker_Calibration_Interval = 100;
 const int ci_Line_Tracker_Cal_Measures = 20;
@@ -361,7 +361,7 @@ int midTracker=digitalRead(ci_Middle_Line_Tracker_LED);
                   followLine();
                 }
                 Ping();
-                if ((ul_Echo_Time / 58) == 15) {
+                if ((ul_Echo_Time / 58) == 7) {
                   ui_Left_Motor_Speed = 1500;
                   ui_Right_Motor_Speed = 1500;
                   turn++;
